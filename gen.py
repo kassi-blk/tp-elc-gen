@@ -11,24 +11,24 @@ def _args_get(args=sys.argv[1:]):
 
     parser.error = error(parser)
 
-    parser.add_argument("elq", type=int, help="elements quantity")
-    parser.add_argument("dx", type=int, help="element's size by X")
-    parser.add_argument("dy", type=int, help="element's size by Y")
-    parser.add_argument("nx", type=int, help="blocks quantity by X")
-    parser.add_argument("ny", type=int, help="blocks quantity by Y")
-    parser.add_argument("edq", type=int, help="edges quantity")
-    parser.add_argument("edq_max", type=int, help="max edge's weight")
-    parser.add_argument("its", type=int, help="iterations quantity")
+    parser.add_argument("elq", type=int, help="element quantity")
+    parser.add_argument("dx", type=int, help="size of element by X")
+    parser.add_argument("dy", type=int, help="size of element by Y")
+    parser.add_argument("nx", type=int, help="block quantity by X")
+    parser.add_argument("ny", type=int, help="block quantity by Y")
+    parser.add_argument("edq", type=int, help="edge quantity")
+    parser.add_argument("edq_max", type=int, help="max weight of edge")
+    parser.add_argument("its", type=int, help="iteration quantity")
     parser.add_argument("fname", type=str, help="name of generation file")
     parser.add_argument("--with-swap", action="store_true",
-        help="swap random elements positions")
+        help="swap random elements")
     parser.add_argument("--with-sort", action="store_true",
-        help="sort elements positions")
+        help="sort position of elements")
     parser.add_argument("--ll-show", action="store_true",
-        help="show sum of links lengths, if changed")
+        help="show the sum of link lengths, if changed")
     parser.add_argument("--mode", type=str,
-        help="hard: randomize all elements positions, each iteration; " +
-            "soft: randomize one random element's position")
+        help="hard: randomize all element positions, each iteration; " +
+            "soft: randomize one random element")
     parser.add_argument("-c", "--comp-diagonal", action="store_true")
 
     parser.set_defaults(with_swap=False)
